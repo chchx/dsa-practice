@@ -27,5 +27,28 @@ const mergeSort = (arr) => {
   return merge(mergeSort(left), mergeSort(right))
 }
 
-console.log(mergeSort([2, 5, 10, 57, 100, 2323, 1]));
+// console.log(mergeSort([2, 5, 10, 57, 100, 2323, 1]));
 
+let input = [1, 5, 3, 15, 77, 66, 24, 5]
+
+const countingSort = (arr) => {
+  const max = Math.max(...arr);
+  // console.log('max is...', max)
+  let slots = Array(max).fill(0);
+  // console.log(slots)
+  let sorted = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    slots[arr[i] - 1]++
+    // console.log(slots)
+  }
+
+  for (let i = 0; i < slots.length; i++) {
+    for (let j = 0; j < slots[i]; j++) {
+      sorted.push(i + 1)
+      console.log(sorted)
+    }
+  }
+}
+
+console.log(countingSort(input))
